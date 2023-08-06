@@ -206,3 +206,21 @@ exports.cambiarEstatusEstudiantes = async (req, res) => {
   }
 };
 
+
+exports.cambiarEstatusEstudiantesInac = async (req, res) => {
+  try {
+    await Estudiante.updateMany({}, { estatus: false });
+    res.status(200).json({ message: 'Estatus de todos los usuarios cambiado a false' });
+  } catch (error) {
+    res.status(500).json({ message: 'Error al cambiar el estatus de los usuarios' });
+  }
+};
+
+exports.cambiarEstatusEstudiantesAct = async (req, res) => {
+  try {
+    await Estudiante.updateMany({}, { estatus: true });
+    res.status(200).json({ message: 'Estatus de todos los usuarios cambiado a true' });
+  } catch (error) {
+    res.status(500).json({ message: 'Error al cambiar el estatus de los usuarios' });
+  }
+};
