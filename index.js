@@ -7,7 +7,7 @@ const bodyParser = require('body-parser');
 
 const cors =require('cors')
 const MONGO_DB_CONNECTION_STRING='mongodb+srv://krisnarocabado:zoharrama@cluster0.e09pjtt.mongodb.net/?retryWrites=true&w=majority'
-// Set the strictQuery option to false to avoid deprecation warning
+// Elimina el warning
 mongoose.set('strictQuery', false);
 //conectar mongoose
 mongoose.connect(MONGO_DB_CONNECTION_STRING)
